@@ -10,15 +10,16 @@ from threading import Timer
 # set the key
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
-SUMMARY_THRESHOLD = 600 #sentences
+SUMMARY_THRESHOLD = 600 #words
+CONVERSATION_DELIMTTER = "$$$"
 
 
 def ask_davinci(prompt, userId):
     preppended_prompt = None
     if userId is not None:
         accumulated_text = dbUtil.get_summary(userId)
-        # add current prompt to the 
-        dbUtil.append_to_summary(userId, prompt)
+        # add current prompt to the summary
+        dbUtil.append_to_summary(userId, f"\nquestion : {prompt}\n")
         preppended_prompt = accumulated_text + prompt
     else:
         preppended_prompt = prompt
@@ -36,14 +37,16 @@ def ask_davinci(prompt, userId):
     # check if threshold is reached and trigger the process to start 
     if userId is not None and len(preppended_prompt.split(" ")) >= SUMMARY_THRESHOLD:
         print("Threshold reached...")
+        ## summarize..
         # retVal = Timer(
         #     3,
         #     dbUtil.summarize_current_chat,
         #     args=(userId,)).start()
     choice_text = response['choices'][0]['text']
     print("response..", choice_text)
+    choice_text = choice_text.replace('"', "'")
     if userId is not None:
-        dbUtil.append_to_summary(userId, choice_text)
+        dbUtil.append_to_summary(userId, f"response : {choice_text}\n{CONVERSATION_DELIMTTER}")
     return choice_text
 
 def create_app(test_config=None):

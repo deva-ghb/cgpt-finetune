@@ -61,11 +61,11 @@ def append_to_summary(userid, text):
     #currText = current_text(0)
     query = f"""
         INSERT INTO chatsummary (userid, chatsummary, allchat)
-        VALUES ({userid}, '{text}', '{text}')
+        VALUES ({userid}, "{text}", "{text}")
         ON CONFLICT (userid) DO
         UPDATE 
-        SET chatsummary = chatsummary || ' {text}',
-        allchat = allchat || ' {text}'
+        SET chatsummary = chatsummary || " {text}",
+        allchat = allchat || " {text}"
         ;
     """
     conn = create_connection(DB_PATH)
@@ -77,7 +77,7 @@ def append_to_summary(userid, text):
 def update_summary(userid, new_summary):
     query = f"""
         UPDATE chatsummary 
-        SET chatsummary = '{new_summary}'
+        SET chatsummary = "{new_summary}"
         where userid = {userid}
         ;
     """

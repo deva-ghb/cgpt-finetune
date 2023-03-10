@@ -49,7 +49,7 @@ def summarize_text(prompt):
         #model="text-davinci-003",
         model="text-curie-001",
         prompt=augmented_prompt,
-        temperature= 0.5,
+        temperature= 0.2,
         max_tokens=1000,
     )
 
