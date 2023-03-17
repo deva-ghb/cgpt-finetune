@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ask Corporation Bot</title>
+  </head>
+  <body>
+    <h1>Corporation bot</h1>
+    <form method="POST" action="{{ url_for('corporationbot') }}">
+      <label for="query">Enter query:</label>
+      <input type="text" id="input" name="query">
+      <br><br>
+      <button type="submit">Submit</button>
+    </form>
+    {% if response %}
+      <p>Response: {{ response }}</p>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,85 @@
+Q: What is Corporations?
+A: Corporations are independent legal entities,  these  are completely separate from the owners and employees who control them. Owners of corporations are called shareholders and they an elected board of directors manages the operations of the company. The board of directors hires the corporate officers (i.e. Chief Executive Officer, Chief Operating Officer, etc.) to handle the day-to-day affairs of the company. 
+corporations must have at least one director. Additionally, corporations must have a president and secretary.
+
+Q: What are the different types of corporations?
+A: Profit Corporations and Non-profit corporations.
+
+Q: What is profit corporation?
+A: A for-profit organization is one that operates with the goal of making money. Most businesses are for-profits that serve their customers by selling a product or service. The business owner earns an income from the profit and may also pay shareholders and investors from the profits.
+
+Q: What is non-profit corporations?
+A: A nonprofit organization is one that qualifies for tax-exempt status by the IRS because its mission and purpose are to further a social cause and provide a public benefit. Nonprofit organizations include hospitals, universities, national charities, and foundations.
+o qualify as a nonprofit, your business must serve the public good in some way. Nonprofits do not distribute profit to anything other than furthering the advancement of the organization. As such, you will be required to make your financial and operating information public so that donors can see how their contributions are being used. An individual or business that makes a donation to a nonprofit is allowed to deduct their donation from their tax return. The nonprofit, likewise, pays no taxes on any money received through fundraising.
+
+Q: What are all different types of entities we have?
+A: Limited Liability Company, General Partnership, Limited Partnership, Limited Liability Partnership, Sole Proprietorship
+
+Q: What is Limited Liability Company?
+A: Limited Liability Companies are the most common type of entities filed with the secretary of state, Owners of LLCs are called members. In this regard, any “person” may be a member of an LLC. This includes individuals, corporations, partnerships, or other LLCs. When filing the certificate of contract for an LLC, the members elected for the members themselves or for managers to govern the company. Managers are similar to the directors of a corporation.
+
+Q: What is Sole proprietorship Business called?
+A: A Sole proprietorship can be explained as a kind of business or an organization that is owned, controlled and operated by a single individual who is the sole beneficiary of all profits or loss, and responsible for all risks. It is a popular kind of business, especially suitable for small business at least for its initial years of operation. This type of businesses is usually a specialized service such as hair salons, beauty parlours, or small retail shops.
+
+Q: Who is Registered Agent?
+A: A registered agent is a person or entity designated by a corporation to receive legal and other official documents on its behalf. This person or entity must have a physical address within the state where the corporation is registered and must be available during normal business hours to receive any documents that are delivered.
+
+When a corporation is formed or registered with a state, it is required to provide the name and address of its registered agent on its formation documents, such as the articles of incorporation or certificate of organization. The registered agent's name and address will also be listed in the corporation's public filings with the state.
+
+The registered agent plays a critical role in ensuring that the corporation remains compliant with state regulations and receives important legal documents in a timely manner. The registered agent will receive documents such as legal summons, subpoenas, and other official notices, and will forward them to the appropriate person within the corporation.
+
+In summary, the registered agent is a vital part of a corporation's compliance infrastructure and serves as the point of contact for legal and official documents for the corporation.
+
+Q: What is Amendment filing?
+A: An amendment filing is a process by which a business entity can make changes to its existing formation or registration documents. For example, a corporation may need to file an amendment if it wants to change its name, add or remove shareholders, or make other significant changes to its corporate structure or operations.
+
+The specific requirements for filing an amendment can vary depending on the state and the type of business entity. Generally, the process involves submitting a document with the state agency responsible for business filings, along with any required fees and supporting documentation.
+
+The document filed for an amendment may be called a "certificate of amendment," "articles of amendment," or some other similar name. The document will typically include information about the business entity, the specific changes being made, and any supporting documentation that is required.
+
+Once the amendment is filed and approved, the changes will become part of the official record of the business entity. It is important to ensure that any changes made through an amendment filing are in compliance with state regulations and do not adversely affect the rights of shareholders, partners, or other stakeholders in the business.
+
+Overall, amendment filings are an important way for businesses to keep their formation or registration documents up-to-date and in compliance with state regulations, while also accommodating changes in the business's structure or operations.
+
+Q: What is annual report filing?
+A: An annual report filing is a requirement for many business entities to provide updated information about their operations and finances to the state regulatory agency where they are registered. The annual report is typically due once a year, hence the name "annual report."
+
+The specific requirements for an annual report filing can vary depending on the state and the type of business entity. In general, the report will include information such as the name and address of the business, the names and addresses of its officers and directors, the nature of its business activities, and its financial information, including revenue, expenses, and profits.
+
+The purpose of the annual report is to provide the state regulatory agency with current information about the business and to ensure that the business is in compliance with state laws and regulations. In some states, failure to file an annual report can result in fines or other penalties, and can even lead to the dissolution or revocation of the business's registration.
+
+In addition to providing updated information about the business, the annual report filing process can also serve as a useful way for business owners and managers to review their operations and financial performance over the past year. By reviewing their financial and operational information and comparing it to previous years' reports, business owners can identify areas of strength and weakness and make adjustments to their operations as needed.
+
+Overall, annual report filings are an important regulatory requirement for many businesses, and can provide valuable information to both the state regulatory agency and the business itself.
+
+Q: Who is filer in corporation filings?
+A: The filer in corporation filings is the person or entity responsible for submitting the required documents and fees to the appropriate state regulatory agency. This may be the business owner, a representative of the business, or a professional service provider such as an attorney or accountant.
+
+The filer is responsible for ensuring that all required information is provided accurately and on time, and that any required fees are paid in full. Depending on the state and the type of filing, there may be different forms or procedures required for the filer to complete the filing.
+
+In some cases, the state may require the filer to provide additional information or documentation in order to complete the filing process. This may include information about the business's owners, officers, or shareholders, as well as financial or other supporting documentation.
+
+It is important for the filer to ensure that all required information is provided and that the filing is completed accurately and on time. Failure to comply with state filing requirements can result in fines or other penalties, and may even lead to the revocation of the business's registration.
+
+Overall, the filer plays an important role in ensuring that the corporation's formation or registration documents are filed accurately and on time, and that the business remains compliant with state regulations.
+
+Q: What is name reservation?
+A: Name reservation is a process by which a business can reserve a specific name for a set period of time before officially registering it with the state or other regulatory agency. This process allows a business to ensure that the name it wants to use is available and can be used without conflict with other businesses.
+
+The specific requirements for name reservation can vary depending on the state and the type of business entity. Generally, the process involves submitting a request to reserve a specific name, along with any required fees, to the state agency responsible for business filings.
+
+Once the name is reserved, it will typically be held for a set period of time, such as 60 or 90 days, during which the business can complete its registration process and officially use the name for its operations.
+
+Name reservation can be particularly useful for businesses that are still in the planning or development stages and want to ensure that their chosen name is available before investing time and resources into developing their brand and marketing materials.
+
+Overall, name reservation is an important step in the business registration process and can help businesses ensure that they are able to use the name of their choice for their operations.
+
+Q: What is Business Formation?
+A: Business formation is the process of creating a new business entity, such as a corporation, limited liability company (LLC), partnership, or sole proprietorship. This process involves choosing a business name, selecting a business structure, and registering the business with the appropriate state or local regulatory agency.
+
+The specific requirements for business formation can vary depending on the state and the type of business entity being created. Generally, the process involves selecting a business name that is available and complies with state laws, and choosing a business structure that best fits the needs of the business, taking into account factors such as liability protection, tax considerations, and management structure.
+
+Once the business structure has been selected, the business must register with the appropriate state or local agency and file the required formation documents, such as articles of incorporation or a certificate of organization. The business may also be required to obtain any necessary licenses or permits to operate in the state or locality.
+
+Business formation is an important step in the process of starting a new business, as it establishes the legal structure of the business and provides a framework for its operations. It is important for business owners to carefully consider their options and seek professional advice if necessary in order to ensure that their business is formed in a way that is legally compliant and meets their specific needs and goals.
+
