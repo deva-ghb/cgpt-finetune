@@ -4,6 +4,7 @@ load_dotenv()
 import openai
 from flask import Flask, request, render_template, url_for
 from llmchain import llmchain
+from gpt.corporation_bot import ask_corporation_bot
 
 
 # set the key
@@ -16,9 +17,11 @@ app = Flask(__name__, instance_relative_config=True)
 @app.route('/corporationbot', methods=['POST', 'GET'])
 def corporationbot():
     query = request.form.get('query')
+    user_id = request.remote_addr
     response = {}
     if query:
-        response = llmchain.ask_corporation_bot(query)
+        #response = llmchain.ask_corporation_bot(query)
+        response = ask_corporation_bot(query, user_id)
         
     
     #response = llmchain.ask_corporation_bot(query)
@@ -30,4 +33,4 @@ def corporationbot():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug= True)

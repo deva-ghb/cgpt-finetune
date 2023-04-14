@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 load_dotenv()
 import openai
 
+
 # set the key
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
@@ -42,21 +43,29 @@ def summarize_as_two_parts(prompt):
 
 
 
-def summarize_text(prompt):
-    augmented_prompt = f"summarize this text : {prompt}"
+def summarize_text(current_summary, conversation):
+    print('\n\ncalling summarize..\n\n')
+    augmented_prompt = f"""
+    Go through the conversation between user and corporation bot along with current summary provided
+    and generate new summary as whole response by giving relative preference to the conversation and then to current summary to understand the user concerns and bot responses 
+    current_summary : {current_summary}
+    conversation : {conversation}
+    """
 
-    gpt_response = openai.Completion.create(
-        #model="text-davinci-003",
-        model="text-curie-001",
-        prompt=augmented_prompt,
-        temperature= 0.2,
-        max_tokens=1000,
+    completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+                #{"role": "system", "content": "we are talking about pineapple, particulary pineapple with blue dots.."},
+                {"role": "user", "content": augmented_prompt}
+            ]
     )
 
-    print(gpt_response)
+    content = completion["choices"][0]["message"]["content"]
+
+    print("content\n\n", content)
+
     
-    
-    return "so"
+    return content
 
 
 
