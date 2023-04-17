@@ -20,7 +20,8 @@ def ask_davinci(prompt, userId):
         accumulated_text = dbUtil.get_summary(userId)
         # add current prompt to the summary
         dbUtil.append_to_summary(userId, f"\nquestion : {prompt}\n")
-        preppended_prompt = accumulated_text + prompt
+        #preppended_prompt = accumulated_text + prompt
+        preppended_prompt = prompt
     else:
         preppended_prompt = prompt
     
@@ -29,7 +30,7 @@ def ask_davinci(prompt, userId):
                 #model= "ada:ft-:mental-health-model-2022-12-26-06-44-14",
                 model= "davinci:ft-personal:mental-health-model-2023-02-28-08-28-05",
                 prompt= preppended_prompt,
-                temperature=0.7,
+                temperature=0.2,
                 max_tokens=250,
                 stop = ['.']
     )
@@ -46,7 +47,7 @@ def ask_davinci(prompt, userId):
     print("response..", choice_text)
     choice_text = choice_text.replace('"', "'")
     if userId is not None:
-        dbUtil.append_to_summary(userId, f"response : {choice_text}\n{CONVERSATION_DELIMTTER}")
+        dbUtil.append_to_summary(userId, f"response : {choice_text}\n{CONVERSATION_DELIMTTER}\n")
     return choice_text
 
 def create_app(test_config=None):
