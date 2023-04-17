@@ -36,9 +36,6 @@ def summarize_as_two_parts(prompt):
 
     part1_summary = summarize_text(part1)
     part2_summary = summarize_text(part2)
-
-
-
     return part1_summary + "\n" + part2_summary
 
 

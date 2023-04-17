@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ask Engage Bot</title>
+  </head>
+  <body>
+    <h1>Engage bot</h1>
+    <form method="POST" action="{{ url_for('engagebot') }}">
+      <label for="query">Enter query:</label>
+      <input type="text" id="input" name="query">
+      <br><br>
+      <button type="submit">Submit</button>
+    </form>
+    {% if response %}
+      <p>Response: {{ response }}</p>
+    {% endif %}
+  </body>
+</html>

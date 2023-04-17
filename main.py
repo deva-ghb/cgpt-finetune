@@ -7,8 +7,9 @@ from elastic.elastic_langchain import query_elastic_search_vector_index, load_in
 #                                   k = 1))
 
 #load_index_to_elastic(dir_path='documents/Engage', index_name= 'good_index')
-load_index_to_elastic(dir_path='documents/FAQ', index_name='corporation_index', separator='Q:', drop_if_exist = True)
-print(query_elastic_search_vector_index(index = 'corporation_index', query= 'what is corporation', k = 2))
+# load_index_to_elastic(dir_path='documents/FAQ', index_name='corporation_index', separator='Q:', drop_if_exist = True)
+# load_index_to_elastic(dir_path='documents/Engage', index_name='engage_index', drop_if_exist = True)
+print(query_elastic_search_vector_index(index = 'engage_index', query= 'how to add agent', k = 2))
 
 
 # from gpt.corporation_bot import ask_corporation_bot
