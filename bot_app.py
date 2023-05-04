@@ -27,13 +27,9 @@ def corporationbot():
     user_id = request.remote_addr
     response = {}
     if query:
-        #response = llmchain.ask_corporation_bot(query)
         response = ask_corporation_bot(query, user_id)
-        return response
-
-    return response
-    # response = llmchain.ask_corporation_bot(query)
-    # return render_template('index.html', response=response.get('response'))
+        
+    return render_template('index.html', response=response.get('response'))
 
 
     
@@ -74,4 +70,4 @@ def engagebot():
 
 
 if __name__ == "__main__":
-    app.run(debug= True)
+    app.run(host = '0.0.0.0', debug = True)
