@@ -5,8 +5,8 @@ load_dotenv()
 # set the key
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 from typing import Any
+from rolling_context.context_chat import get_augmented_prompt, put_turn
 from elastic.elastic_langchain import query_elastic_search_vector_index
-from context.context_chat import get_augmented_prompt, put_turn
 
 INDEX_NAME = 'corporation_index'
 ENGAGE_INDEX = 'engage_index'
@@ -70,6 +70,7 @@ def ask_engage_bot(query : str, user_id : str):
     #         {"role": "user", "content": augmented_prompt}
     #     ]))
    
+
     completion = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
@@ -79,14 +80,13 @@ def ask_engage_bot(query : str, user_id : str):
     temperature = 0.2
     )
 
-    print('completion ', completion)
 
     content = completion["choices"][0]["message"]["content"]
 
     content = content.replace('"', "")
     content = content.replace("'", "")
 
-    put_turn(user_id= user_id + 'engage', user_query= query, bot_response = content)
+    put_turn(user_id = user_id + 'engage', user_query= query, bot_response = content)
 
     return {
         'response' : content
