@@ -8,14 +8,14 @@ from llmchain import llmchain
 from gpt.bot import ask_corporation_bot, ask_engage_bot
 from datetime import timedelta
 from flask_session import Session
+from flask_cors import CORS
 
 
 # set the key
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
-
-
 app = Flask(__name__, instance_relative_config=True)
+CORS(app)
 app.secret_key = 'simple'
 app.config['SESSION_TYPE'] = 'filesystem'
 #app.permanent_session_lifetime = timedelta(minutes=5)
@@ -70,4 +70,4 @@ def engagebot():
 
 
 if __name__ == "__main__":
-    app.run(host = '0.0.0.0', debug = True)
+    app.run(host = '0.0.0.0', debug = True, port=5001)
