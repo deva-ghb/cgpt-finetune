@@ -83,7 +83,8 @@ def ask_engage_bot(query : str, user_id : str):
 
     content = content.replace('"', "")
     content = content.replace("'", "")
-    content = content.replace('\n', '<br>')
+    if '<div>' in content or '<p>' in content:
+        content = content.replace('\n', '')
     print('prompt', augmented_prompt)
     print('completion', completion)
 
