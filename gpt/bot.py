@@ -15,7 +15,7 @@ def ask_corporation_bot(query : str, user_id : str):
                                                               query = query,
                                                               k = 2)
     
-    augmented_prompt = get_augmented_prompt(user_id, query) 
+    augmented_prompt = get_augmented_prompt(user_id, query, relevant_page_content) 
     # messages=[
     #         {"role": "system", "content": relevant_page_content},
     #         {"role": "user", "content": augmented_prompt}
@@ -31,7 +31,6 @@ def ask_corporation_bot(query : str, user_id : str):
     completion = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
-            {"role": "system", "content": relevant_page_content},
             {"role": "user", "content": augmented_prompt}
         ],
     temperature = 0.2
@@ -57,7 +56,7 @@ def ask_engage_bot(query : str, user_id : str):
                                                               query = query,
                                                               k = 2)
     
-    augmented_prompt = get_augmented_prompt(user_id + 'engage', query) 
+    augmented_prompt = get_augmented_prompt(user_id + 'engage', query, relevant_page_content) 
     # messages=[
     #         {"role": "system", "content": relevant_page_content},
     #         {"role": "user", "content": augmented_prompt}
@@ -74,7 +73,6 @@ def ask_engage_bot(query : str, user_id : str):
     completion = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
-            {"role": "system", "content": relevant_page_content},
             {"role": "user", "content": augmented_prompt}
         ],
     temperature = 0.2
@@ -85,12 +83,14 @@ def ask_engage_bot(query : str, user_id : str):
 
     content = content.replace('"', "")
     content = content.replace("'", "")
+    content = content.replace('\n', '<br>')
+    print('prompt', augmented_prompt)
+    print('completion', completion)
 
-    put_turn(user_id = user_id + 'engage', user_query= query, bot_response = content)
+    put_turn(user_id = user_id + 'engage', user_query = query, bot_response = content)
 
     return {
         'response' : content
     }
     # print("content\n\n", content)
-        
     

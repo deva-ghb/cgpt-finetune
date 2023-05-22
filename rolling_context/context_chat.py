@@ -35,22 +35,36 @@ def put_turn(user_id : Any, user_query : str, bot_response : str, delimiter : st
         ###
 
 
-def get_augmented_prompt(user_id : str, query : str):
+def get_augmented_prompt(user_id : str, query : str, relevant_page_content : str):
     summary = db_util.get_summary(user_id)
     last_n_turns = db_util.get_last_n_turns(user_id)
     prompt_template = f"""
-    summary of current user conversation is - '{summary}'
+    summary of current user conversation is
+    -------------
+    '{summary}'
+    -------------
     
-    recent conversation turns are - '{last_n_turns}'
+    recent conversation turns are
+    -------------
+    '{last_n_turns}'
+    -------------
 
-    consider only system context, summary, recent conversation answer the below query else say I don't know
+    context 
+    -------------
+    '{relevant_page_content}'
+    -------------
 
-    query - '{query}'
+    Consider the provided context, summary, and recent conversation to answer the following user query. Please note that the user does not have direct visibility to the above context, so the response should be summarized. If the answer is unknown, respond with "I don't know."
+
+    query -'{query}' 
+    
+    Do not ask user to refer to either of context, summary, recent conversation turns. 
+    Do not mention keywords 'recent conversation turns, context, summary' in the response 
+    Generate response in HTML
+    HTML code :
     """
 
     return prompt_template
-
-
 
 
 
