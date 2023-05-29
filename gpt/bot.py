@@ -10,7 +10,8 @@ from elastic.elastic_langchain import query_elastic_search_vector_index
 
 INDEX_NAME = 'corporation_index'
 #ENGAGE_INDEX = 'engage_index'
-ENGAGE_INDEX = 'first'
+#ENGAGE_INDEX = 'first'
+ENGAGE_INDEX = 'engage_index_segmented'
 def ask_corporation_bot(query : str, user_id : str):
     relevant_page_content = query_elastic_search_vector_index(index= INDEX_NAME,
                                                               query = query,

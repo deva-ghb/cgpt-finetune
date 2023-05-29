@@ -54,12 +54,20 @@ def get_augmented_prompt(user_id : str, query : str, relevant_page_content : str
     '{relevant_page_content}'
     -------------
 
-    Consider the provided context, summary, and recent conversation to answer the following user query. Please note that the user does not have direct visibility to the above context, so the response should be summarized. If the answer is unknown, respond with "I don't know."
+    Consider the provided context, summary, and recent conversation to answer the following user query. Please note that the user does not have direct visibility to the above context, so the response should be summarized.
 
     query -'{query}' 
     
     Do not ask user to refer to either of context, summary, recent conversation turns. 
     Do not mention keywords 'recent conversation turns, context, summary' in the response 
+    If the answer is not sure considering only provided information, just respond with "I don't know."
+    If it contains a sequence of instructions, \ 
+    re-write those instructions in the following format:
+    Step 1 - ...
+    Step 2 - …
+    …
+    Step N - …
+
     Generate response in HTML
     HTML code :
     """
