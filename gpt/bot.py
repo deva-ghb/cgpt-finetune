@@ -9,7 +9,8 @@ from rolling_context.context_chat import get_augmented_prompt, put_turn
 from elastic.elastic_langchain import query_elastic_search_vector_index
 
 INDEX_NAME = 'corporation_index'
-ENGAGE_INDEX = 'engage_index'
+#ENGAGE_INDEX = 'engage_index'
+ENGAGE_INDEX = 'first'
 def ask_corporation_bot(query : str, user_id : str):
     relevant_page_content = query_elastic_search_vector_index(index= INDEX_NAME,
                                                               query = query,
@@ -54,7 +55,7 @@ def ask_corporation_bot(query : str, user_id : str):
 def ask_engage_bot(query : str, user_id : str):
     relevant_page_content = query_elastic_search_vector_index(index= ENGAGE_INDEX,
                                                               query = query,
-                                                              k = 2)
+                                                              k = 1)
     
     augmented_prompt = get_augmented_prompt(user_id + 'engage', query, relevant_page_content) 
     # messages=[
@@ -75,7 +76,7 @@ def ask_engage_bot(query : str, user_id : str):
     messages=[
             {"role": "user", "content": augmented_prompt}
         ],
-    temperature = 0.2
+    temperature = 0
     )
 
 
