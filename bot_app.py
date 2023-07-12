@@ -71,10 +71,10 @@ def form_builder():
             response = {
                 "data" : data,
                 "status" : "SUCCESS",
-                "display_message" : "Resource created",
-                "code" : 200,
+                "display_message" : "Response created.",
+                "code" : 200
             }
-            return response
+            return Response(str(response), status=200,mimetype='application/json' )
 
         else:
             response = {
