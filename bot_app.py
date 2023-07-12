@@ -6,7 +6,7 @@ from flask import Flask, request, render_template, session,Response
 import uuid
 from llmchain import llmchain
 from gpt.bot import ask_corporation_bot, ask_engage_bot
-from datetime import timedelta
+from formbuild_gpthelper.gpt.gptUtil import formSpecificationToJson
 from flask_session import Session
 from flask_cors import CORS
 
@@ -31,8 +31,6 @@ def corporationbot():
         
     return render_template('index.html', response=response.get('response'))
 
-
-    
 
 @app.route('/engagebot', methods=['POST', 'GET'])
 def engagebot():
@@ -60,6 +58,43 @@ def engagebot():
             'session_id' : user_id
         }
         return Response(str(message), status=400,mimetype='application/json' )
+    
+
+@app.route('/usecase-to-form', methods=['POST', 'GET'])
+def form_builder():
+    usecase = request.json.get('usecase')
+
+    try:    
+        if usecase:
+            #response = llmchain.ask_corporation_bot(query)
+            data = formSpecificationToJson(usecase)
+            response = {
+                "data" : data,
+                "status" : "SUCCESS",
+                "display_message" : "Resource created",
+                "code" : 200,
+            }
+            return response
+
+        else:
+            response = {
+                "data" : None,
+                "status" : "INCORRECT INPUT",
+                "display_message" : "Supply the usecase.",
+                "code" : 403,
+            }
+            return Response(str(response), status=403,mimetype='application/json' )
+    except Exception as e:
+        response = {
+                "data" : None,
+                "status" : "FAILED",
+                "display_message" : f"{e.__class__.__name__}, {e}",
+                "code" : 500,
+        }
+
+        return Response(str(response), status=500, mimetype='application/json' )
+
+
         
     
     #response = llmchain.ask_corporation_bot(query)
@@ -70,4 +105,4 @@ def engagebot():
 
 
 if __name__ == "__main__":
-    app.run(host = '0.0.0.0', debug = True)
+    app.run(host = '0.0.0.0', debug = True, port = 5001)
