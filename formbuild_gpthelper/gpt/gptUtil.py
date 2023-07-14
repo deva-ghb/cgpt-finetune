@@ -21,32 +21,11 @@ def formSpecificationToJson(form_specification : str):
         type: "header",
         headingText: "",
         subHeaderText: "",
-        headingAlignment: "left",
-        headingSize: "default",
-        headerLogo: "",
-        customClass: 12,
-        width: 12,
-        imageURL: "/assets/formbuilder/header.svg",
     },
     Label: {
-        id: "Id of the field",
-        category: "component",
-        type: "label",
-        label: "Label",
-        labelTypeOptions: [
-            {
-                label: "Normal Text",
-                value: "p",
-            },
-            { label: "Heading - large", value: "h1" },
-            { label: "Heading - medium", value: "h2" },
-            { label: "Heading - small", value: "h3" },
-        ],
-        labelType: "",
-        labelAlign: "Auto",
-        customClass: 12,
-        width: 12,
-        imageURL: "/assets/formbuilder/label.svg",
+        id: "",
+        type: "",
+        label: "",
     },
 
     "Text Input": {
@@ -55,86 +34,43 @@ def formSpecificationToJson(form_specification : str):
         label: "",
         textLabel: "",
         value: "",
-        category: "component",
         type: "textField",
-        required: false,
-        charlength: 100,
-        customClass: 12,
-        width: 12,
-        textfieldOptions: [
-           {
-                label: "Text Input",
-                value: "Text Field",
-            },
-            {
-                label: "Email",
-                value: "Email",
-            },
-            {
-                label: "Password",
-                value: "Password",
-            },
-        ],
-        imageURL: "/assets/formbuilder/text-field.svg"
+        charlength: 100
     },
     Text: {
         id: "",
         name: "",
         label: "",
-        category: "component",
         type: "multiline",
         required: ,
         charlength: ,
         text: "",
-        customClass: 12,
-        options: [
-            {
-                label: "Normal Text",
-                value: "p",
-            },
-            { label: "Heading - large", value: "h1" },
-            { label: "Heading - medium", value: "h2" },
-            { label: "Heading - small", value: "h3" },
-        ],
-        width: 12,
-        imageURL: "/assets/formbuilder/txt-input.svg",
     },
     Number: {
-        id: ,
+        id: "",
         name: "",
         label: "",
         placeholder: "",
-        category: "component",
         type: "number",
         value: "",
-        required: false,
         maximumValue: ,
         minimumValue: ,
-        stepValue: 0,
-        customClass: 12,
-        width: 12,
-        imageURL: "/assets/formbuilder/Numbers.svg",
     },
     Select: {
         id: "",
         name: "",
         label: "",
-        category: "component",
         placeholder: "",
         type: "select",
         value: "",
         required: false,
-        charlength: 100,
-        customClass: 12,
-        width: 12,
         options: [
             {
                 id: "",
                 label: "Option label",
                 value: "optionValue",
             },
-        ],
-        imageURL: "/assets/formbuilder/select.svg",
+        ]
     },
 
     "Single Choice": {
@@ -150,12 +86,7 @@ def formSpecificationToJson(form_specification : str):
                 value: "optionValue",
             },
         ],
-        required: false,
-        spreadToCloumns: false,
-        charlength: 100,
-        customClass: 12,
-        width: 12,
-        imageURL: "/assets/formbuilder/radio.svg",
+        required: false
     },
     "Multiple Choice": {
         id: "",
@@ -163,7 +94,6 @@ def formSpecificationToJson(form_specification : str):
         label: "",
         text: "",
         value: [],
-        category: "component",
         type: "checkbox",
         options: [
             {
@@ -175,129 +105,65 @@ def formSpecificationToJson(form_specification : str):
                 id: ,
                 text: "option 2",
                 isChecked: false,
-            },
-            {
-                id:,
-                text: "option 3",
-                isChecked: false,
-            },
+            }
         ],
-        required: false,
-        charlength: 100,
-        customClass: 12,
-        width: 12,
-        imageURL: "/assets/formbuilder/checkbox2.svg",
+        required: false
     },
     Button: {
-        id: ,
-        category: "component",
+        id: "",
         type: "button",
-        text: "",
-        btnAlignment: "Auto",
-        billingText: "",
-        required: false,
-        customClass: 12,
-        width: 12,
-        imageURL: "/assets/formbuilder/Submit Button.svg",
+        text: ""
     },
     Date: {
-        id: ,
+        id: "",
         label: "",
         placeholder: "",
-        category: "component",
         type: "datepicker",
         value: "",
-        dontAllowPastDate: false,
-        dontAllowFutureDate: false,
         minimumDate: "",
-        maximumDate: "",
-        required: false,
-        charlength: 100,
-        customClass: 12,
-        width: 12,
-        imageURL: "/assets/formbuilder/calendar.svg",
+        maximumDate: ""
     },
     Time: {
         id: "",
         label: "",
         placeholder: "",
         type: "timepicker",
-        value: "",
-        dontAllowPastTimes: false,
-        dontAllowFutureTimes: false,
-        minimumTime: "",
-        maximumTime: "",
-        required: false,
-        charlength: 100,
-        width: 12,
-        imageURL: "url to clock icon",
+        value: ""
     },
     Divider: {
         id: "",
         category: "component",
-        type: "divider",
-        dividerStyle: "",
-        dividerColor: "",
-        required: false,
-        charlength: 100,
-        customClass: 12,
-        width: 12,
-        imageURL: "/assets/formbuilder/divided.svg",
+        type: "divider"
     },
     Link: {
-        id: ,
+        id: "",
         category: "component",
         type: "link",
         linkText: "",
         embeddedLink: "",
         leadingTxt: "",
-        trailingTxt: "",
-        required: false,
-        customClass: 12,
-        width: 12,
-        imageURL: "/assets/formbuilder/link.svg",
+        trailingTxt: ""
     },
     File: {
         id: "",
-        category: "component",
         name: "",
         label: "",
         type: "fileUpload",
-        value: "",
-        required: false,
-        charlength: 100,
-        customClass: 12,
-        width: 12,
-        imageURL: "/assets/formbuilder/files.svg",
+        value: ""
     },
     Image: {
         id: "",
-        category: "component",
         name: "",
         label: "",
         type: "image",
-        value: "",
-        imageWidth: 60,
-        imageHeight: 60,
-        imageAlignment: "Auto",
-        required: false,
-        charlength: 100,
-        customClass: 12,
-        width: 12,
-        imageURL: "/assets/formbuilder/photo.svg",
+        value: ""
     },
 
     Footer: {
         id: "",
-        category: "component",
         type: "footer",
         footerText: "text for footer",
-        footerLabel: "label for footer",
-        footerAlignment: "left",
-        headingSize: "default",
-        customClass: 12,
-        width: 12,
-        imageURL: "/assets/formbuilder/footer.png",
+        footerLabel: "label for footer"
     }
 }
 """
@@ -307,11 +173,13 @@ def formSpecificationToJson(form_specification : str):
     }"""
 
     prompt = f"""
-    usecase - '{form_specification}'.
+    usecase - 'form for - {form_specification}'.
     List of fields are - [Header, Label, Text field, Text, Number, Select, Single Choice, Multiple Choice, Button, Date, Time, Divider, Link, File, Image, Footer]
     Go through the following json of fields to understand the structure of each field - '{example}'
-    Generate a form json by picking approriate fields required for the usecase.
-    generate the values for selected fields accoring to usecase.
+    Generate a form json by picking approriate fields required for the usecase given.
+    generate the values for selected fields according to the usecase.
+    Do not generate empty values in the form field.
+    It is not neccesary to include all the types of fields given.
     response structure must be :
         {example_resp}
     give entire response as a valid JSON.
@@ -332,6 +200,7 @@ def formSpecificationToJson(form_specification : str):
 
     
     print("response", gpt_response)
+    print("tokens used", tokens_used)
 
     form_fields_json = json.loads(gpt_response)
 
