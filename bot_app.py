@@ -1,4 +1,4 @@
-import os
+import os, json
 from dotenv import load_dotenv
 load_dotenv()
 import openai
@@ -74,7 +74,7 @@ def form_builder():
                 "display_message" : "Response created.",
                 "code" : 200
             }
-            return Response(str(response), status=200,mimetype='application/json' )
+            return Response(json.dumps(response), status=200, mimetype='application/json' )
 
         else:
             response = {
@@ -83,16 +83,47 @@ def form_builder():
                 "display_message" : "Supply the usecase.",
                 "code" : 403,
             }
-            return Response(str(response), status=403,mimetype='application/json' )
-    except Exception as e:
+            return Response(json.dumps(response), status=403, mimetype='application/json' )
+    
+    except openai.error.Timeout as e:
+        #Handle timeout error, e.g. retry or log
+        print(f"OpenAI API request timed out: {e}")
         response = {
                 "data" : None,
                 "status" : "FAILED",
-                "display_message" : f"{e.__class__.__name__}, {e}",
+                "display_message" : "Timeout",
+                "code" : 500,
+            }
+        pass
+    except openai.error.APIError as e:
+        #Handle API error, e.g. retry or log
+        print(f"OpenAI API returned an API Error: {e}")
+        response = {
+                "data" : None,
+                "status" : "FAILED",
+                "display_message" : "APIError",
+                "code" : 500,
+            }
+        pass
+    except openai.error.APIConnectionError as e:
+        #Handle connection error, e.g. check network or log
+        print(f"OpenAI API request failed to connect: {e}")
+        response = {
+                "data" : None,
+                "status" : "FAILED",
+                "display_message" : "APIConnectionError",
+                "code" : 500,
+            }
+        pass
+    except Exception as e:
+        response = {
+                "data" : {'fields' : []},
+                "status" : "FAILED",
+                "display_message" : f"Could not generate form.",
                 "code" : 500,
         }
 
-        return Response(str(response), status=500, mimetype='application/json' )
+        return Response(json.dumps(response), status=500, mimetype='application/json' )
 
 
         
