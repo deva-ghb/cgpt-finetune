@@ -17,16 +17,11 @@ def formSpecificationToJson(form_specification : str):
     {
     Header: {
         id: "Id of the field",
-        category: "component",
         type: "header",
         headingText: "",
         subHeaderText: "",
     },
-    Label: {
-        id: "",
-        type: "",
-        label: "",
-    },
+
 
     "Text Input": {
         id: "",
@@ -35,15 +30,14 @@ def formSpecificationToJson(form_specification : str):
         textLabel: "",
         value: "",
         type: "textField",
-        charlength: 100
+        charlength: 100,
+        
     },
     Text: {
         id: "",
         name: "",
         label: "",
         type: "multiline",
-        required: ,
-        charlength: ,
         text: "",
     },
     Number: {
@@ -55,6 +49,7 @@ def formSpecificationToJson(form_specification : str):
         value: "",
         maximumValue: ,
         minimumValue: ,
+        
     },
     Select: {
         id: "",
@@ -62,8 +57,6 @@ def formSpecificationToJson(form_specification : str):
         label: "",
         placeholder: "",
         type: "select",
-        value: "",
-        required: false,
         options: [
             {
                 id: "",
@@ -74,11 +67,10 @@ def formSpecificationToJson(form_specification : str):
     },
 
     "Single Choice": {
-        id: ,
+        id: "",
         label: "",
         category: "component",
         type: "radio",
-        value: "",
         options: [
             {
                 id: ,
@@ -86,14 +78,12 @@ def formSpecificationToJson(form_specification : str):
                 value: "optionValue",
             },
         ],
-        required: false
     },
     "Multiple Choice": {
         id: "",
         name: "",
         label: "",
         text: "",
-        value: [],
         type: "checkbox",
         options: [
             {
@@ -107,37 +97,36 @@ def formSpecificationToJson(form_specification : str):
                 isChecked: false,
             }
         ],
-        required: false
+
     },
     Button: {
         id: "",
         type: "button",
-        text: ""
+        text: "",
     },
     Date: {
         id: "",
         label: "",
         placeholder: "",
         type: "datepicker",
-        value: "",
         minimumDate: "",
-        maximumDate: ""
+        maximumDate: "",
+
     },
     Time: {
         id: "",
         label: "",
         placeholder: "",
         type: "timepicker",
-        value: ""
+        minimumTime: "",
+        maximumTime: "",
     },
     Divider: {
         id: "",
-        category: "component",
         type: "divider"
     },
     Link: {
         id: "",
-        category: "component",
         type: "link",
         linkText: "",
         embeddedLink: "",
@@ -149,14 +138,13 @@ def formSpecificationToJson(form_specification : str):
         name: "",
         label: "",
         type: "fileUpload",
-        value: ""
+
     },
     Image: {
         id: "",
         name: "",
         label: "",
         type: "image",
-        value: ""
     },
 
     Footer: {
@@ -179,7 +167,7 @@ def formSpecificationToJson(form_specification : str):
     Generate a form json by picking approriate fields required for the usecase given.
     generate the values for selected fields according to the usecase.
     Do not generate empty values in the form field.
-    It is not neccesary to include all the types of fields given.
+    For the selected fields make sure to generate every key within the field.
     response structure must be :
         {example_resp}
     give entire response as a valid JSON.
