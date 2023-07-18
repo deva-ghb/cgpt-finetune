@@ -26,10 +26,10 @@ def formSpecificationToJson(form_specification : str):
     "Text Input": {
         id: "",
         name: "",
+        type: "textField",
         label: "",
         textLabel: "",
         value: "",
-        type: "textField",
         charlength: 100,
         
     },
@@ -165,12 +165,13 @@ def formSpecificationToJson(form_specification : str):
     List of fields are - [Header, Label, Text field, Text, Number, Select, Single Choice, Multiple Choice, Button, Date, Time, Divider, Link, File, Image, Footer]
     Go through the following json of fields to understand the structure of each field - '{example}'
     Generate a form json by picking approriate fields required for the usecase given.
-    generate the values for selected fields according to the usecase.
-    Do not generate empty values in the form field.
-    For the selected fields make sure to generate every key within the field.
+    generate the values for selected fields along with all values inside it according to the usecase.
+    Make sure to generate 'type' in each field
     response structure must be :
         {example_resp}
-    give entire response as a valid JSON.
+    It is not required to pick all fields available to generate form.
+    if usecase given is not clear generate empty list of fields.
+    give entire response as a valid typescript JSON.
     """
 
     print("calling completion api")
