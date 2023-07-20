@@ -69,7 +69,6 @@ def formSpecificationToJson(form_specification : str):
     "Single Choice": {
         id: "",
         label: "",
-        category: "component",
         type: "radio",
         options: [
             {
@@ -162,7 +161,6 @@ def formSpecificationToJson(form_specification : str):
 
     prompt = f"""
     usecase - 'form for - {form_specification}'.
-    List of fields are - [Header, Label, Text field, Text, Number, Select, Single Choice, Multiple Choice, Button, Date, Time, Divider, Link, File, Image, Footer]
     Go through the following json of fields to understand the structure of each field - '{example}'
     Generate a form json by picking approriate fields required for the usecase given.
     generate the values for selected fields along with all values inside it according to the usecase.
@@ -171,8 +169,10 @@ def formSpecificationToJson(form_specification : str):
         {example_resp}
     It is not required to pick all fields available to generate form.
     if usecase given is not clear generate empty list of fields.
+    make sure type in each must be in [header, textField, multiline, number, select, radio, checkbox, button, datepicker, timepicker, divider, fileUpload, image, footer]
     give entire response as a valid typescript JSON.
     """
+    # List of fields are - [Header, Label, Text field, Text, Number, Select, Single Choice, Multiple Choice, Button, Date, Time, Divider, Link, File, Image, Footer]
 
     print("calling completion api")
     completion = openai.ChatCompletion.create(
