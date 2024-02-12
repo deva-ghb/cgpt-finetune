@@ -119,6 +119,7 @@ def form_builder():
         response = {
                 "data" : {'fields' : []},
                 "status" : "FAILED",
+                "error" : str(e) + str(e.__class__.__name__),
                 "display_message" : f"Could not generate form.",
                 "code" : 500,
         }
