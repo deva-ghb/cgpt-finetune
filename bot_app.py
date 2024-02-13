@@ -15,7 +15,7 @@ from flask_cors import CORS
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 app = Flask(__name__, instance_relative_config=True)
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app)
 app.secret_key = 'simple'
 app.config['SESSION_TYPE'] = 'filesystem'
 #app.permanent_session_lifetime = timedelta(minutes=5)
